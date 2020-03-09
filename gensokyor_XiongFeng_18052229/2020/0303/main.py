@@ -2,7 +2,8 @@ import input_article_ch
 import jieba_test
 import collections
 
-a=input_article_ch.readarticle("res/ch.txt")
+source_file="res/ch.txt"
+a=input_article_ch.readarticle(source_file)
 a=a.strip().replace("\n","").replace("\r","")
 b=jieba_test.ch_jieba(a)
 c=collections.Counter()
