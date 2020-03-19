@@ -5,7 +5,7 @@ import json
 
 
 def authorize():
-    key = open('github_access.txt', encoding='UTF-8').read()
+    key = open('github_access.txt', encoding='UTF-8').read()  # 自行创建授权码,载入
     return key
 
 
@@ -62,12 +62,12 @@ def info_pages(urlorigin):  # 用于获取issues,releases
     return total
 
 
-def single_issue(urlorigin, page):
+def single_issue(urlorigin, page):  # 获取单页issues
     key = authorize()
     uas = UserAgent(verify_ssl=False)
     per = '?per_page=100&page='
     header = {"User-Agent": uas.Chrome, 'Authorization': 'token ' + key}
     urlp = urlorigin + per + str(page)
     info = requests.get(urlp, headers=header).json()
-    f = open('./json/' + str(page) + '.json', 'w+')
+    f = open('./json/' + str(page) + '.json', 'w+')  # 创建并保存json
     json.dump(info, f)
