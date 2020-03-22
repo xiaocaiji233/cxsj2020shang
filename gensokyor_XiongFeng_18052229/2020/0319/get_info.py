@@ -71,3 +71,5 @@ def single_issue(urlorigin, page):  # 获取单页issues
     info = requests.get(urlp, headers=header).json()
     f = open('./json/' + str(page) + '.json', 'w+')  # 创建并保存json
     json.dump(info, f)
+
+def single_issue
