@@ -72,4 +72,13 @@ def single_issue(urlorigin, page):  # 获取单页issues
     f = open('./json/' + str(page) + '.json', 'w+')  # 创建并保存json
     json.dump(info, f)
 
-def single_issue
+
+def single_release(urlorigin, page):
+    key = authorize()
+    uas = UserAgent(verify_ssl=False)
+    per = '?per_page=100&page='
+    header = {"User-Agent": uas.Chrome, 'Authorization': 'token ' + key}
+    urlp = urlorigin + per + str(page)
+    info = requests.get(urlp, headers=header).json()
+    f = open('./json/release/' + str(page) + '.json', 'w+')  # 创建并保存json
+    json.dump(info, f)
