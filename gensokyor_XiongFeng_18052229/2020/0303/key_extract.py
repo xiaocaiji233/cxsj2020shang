@@ -5,7 +5,7 @@ import os
 
 # from pprint import pprint
 
-def generateTR(p, pn):  # 分析语料库并生成lda模型,输出指定文档的关键词信息
+def generateTR(p, pn):  # 分析语料库并生成lda模型,输出关键词信息预测指定文档
     # 加载语料
     train = []
     corpus_path = p
