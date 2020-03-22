@@ -1,0 +1,7 @@
+2020/03/22
+使用gensim 框架 实现 LDA主题模型:
+https://www.jianshu.com/p/5d9107a57d5f
+Gensim LDA主题模型实验:
+https://www.cnblogs.com/chenbjin/p/5638904.html
+gensim实现LDA主题模型-------实战案例（分析希拉里邮件的主题）:
+https://blog.csdn.net/shawroad88/article/details/90115390
