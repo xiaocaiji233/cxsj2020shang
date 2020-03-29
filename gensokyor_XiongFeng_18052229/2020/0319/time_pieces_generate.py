@@ -9,9 +9,14 @@ def get_releases(releases):  # 获取所有release的发布时间
     return times
 
 
+def port(path: str):
+    origin = release_process.issues_process(path)
+    processed = get_releases(origin)
+    return processed
+
+
 if __name__ == '__main__':
-    test = get_releases([{"published_at": '2020-03-1'}, {"published_at": '2020-03-1'}, {"published_at": '2020-01-2'},
-                         {"published_at": '2020-01-2'}, {"published_at": '2020-01-0'}, {"published_at": '2019-12-2'}])
+    test = port('json/release/')
     print(test)
 #     print('1950-21-01' != '1950-21-01')
 #     print('1950-21-01' == '1950-21-01')

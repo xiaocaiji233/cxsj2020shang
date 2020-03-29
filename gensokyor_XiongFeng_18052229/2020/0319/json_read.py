@@ -1,5 +1,5 @@
 import json
-from pprint import pprint
+
 
 
 def file_load(fullname):  # 载入单个json文件
@@ -10,6 +10,7 @@ def file_load(fullname):  # 载入单个json文件
 
 
 if __name__ == '__main__':  # 测试代码
+    from pprint import pprint
     test = file_load('json/', '34.json')
     for i in test:
         pprint(i['updated_at'])

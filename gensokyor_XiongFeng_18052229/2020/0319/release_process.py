@@ -2,7 +2,7 @@ import json_process
 import files_load
 
 
-def issues_process(path):  # release载入并简化,保留"published_at"
+def issues_process(path:str):  # release载入并简化,保留"published_at"
     origin = files_load.all_load(path)
     processed = json_process.jsons_process(origin, ["published_at"])
     for i in processed:
