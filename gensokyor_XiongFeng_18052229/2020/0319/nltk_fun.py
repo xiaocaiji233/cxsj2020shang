@@ -25,14 +25,16 @@ def p2w(ss):  # sents->ws
     nltk.data.path.append(r"E:\py_space\NLTK_DATA\nltk_data")
     set(stopwords.words('english'))
     stopword = stopwords.words('english')
-    stopword += ['\'', '.', ',', '?', '!', ':', '\"', '/', '-', '+', '*', '', '', '\\f', '\\n', '/', '*', '//','@']
+    stopword += ['\'', '.', ',', '?', '!', ':', '\"', '/', '-', '+', '*', '', '', '\\f', '\\n', '/', '*', '//', '@',
+                 '```', ')**', '://']
     ws = []
     for i in ss:
         # print(i)
         w = wordtokenizer(i)
         for j in w:
             if j not in stopword:
-                ws.append(j)
+                if len(j) > 2:
+                    ws.append(j)
     return ws
 
 
@@ -44,7 +46,8 @@ def wordtag_set(s):  # string->tags
         w_tags = nltk.pos_tag(nltk.word_tokenize(i))
         for j in w_tags:
             if j[0] not in token:
-                w_tagss.append(j)
+                if len(j[0]) > 3:
+                    w_tagss.append(j)
     return w_tagss
 
 

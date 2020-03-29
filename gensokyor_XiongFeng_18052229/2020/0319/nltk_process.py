@@ -6,6 +6,9 @@ from pprint import pprint
 def singlebody_process(piece: dict, key: str):
     a = nltk_fun.splitSentence(str(piece[key]))
     a = nltk_fun.p2w(a)
+    for i in a:
+        if len(i) < 3:
+            a.remove(i)
     piece[key] = a
     # pprint(piece)
     return piece[key]
@@ -11287,4 +11290,4 @@ if __name__ == '__main__':
     import json
 
     f = open('./tesst_processed_pieces.txt', 'w')
-    json.dump(content,f)
+    json.dump(content, f)
