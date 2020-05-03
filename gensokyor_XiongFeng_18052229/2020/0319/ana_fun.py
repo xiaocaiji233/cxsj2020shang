@@ -11,4 +11,3 @@ def get_all_resources(issues_path: str, release_path: str):
     for_ana = dictionary_generate.get_allmat(ana_res)
     return for_ana
 
-def ana
