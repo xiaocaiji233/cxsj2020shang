@@ -86,7 +86,7 @@ if __name__ == "__main__":
     # # file = loaddoc('res/corpora/corpora.csv', 'UTF-8')
     # pprint.pprint(file)
     save_data = corpora2word('res/corpora/corpora.csv')
-    file = open('./devided.txt', 'w')
+    file = open('./res/processed/word_devided.txt', 'w')
     # save_test = 'sss'
     json.dump(save_data, file)
     pprint.pprint(corpora2word('res/corpora/corpora.csv'))
