@@ -1,6 +1,6 @@
 import json_read
 
-
+# 分离标签和正文
 def seperate(path: str):
     orin = json_read.file_load(path + 'word_devided.txt')
     pos = []
@@ -12,16 +12,7 @@ def seperate(path: str):
             neg.append(i[1])
     return {'positive': pos, 'negative': neg}
 
-
-def test_process(tests: list):
-    flag = []
-    words = []
-    for i in tests:
-        flag.append(i[1])
-        words.append(i[0])
-    return flag, words
-
-
+# 保存分离结果
 def seperate_save(path: str):
     to_save = seperate(path)
     f_pos = open(path + 'pos.txt', 'w')

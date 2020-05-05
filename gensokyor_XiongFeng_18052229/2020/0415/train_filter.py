@@ -10,7 +10,8 @@ import pos_neg_seperate
 
 
 # train:list
-# [[corpus:dict,tag:str].......]
+# [[corpus:dict,tag:str].......]\
+# 训练
 def training(train: list, classifier):
     classifier = SklearnClassifier(classifier)
     classifier.train(train)
@@ -20,9 +21,18 @@ def training(train: list, classifier):
 def predict_per(classifier, single_sample):
     return classifier.classify(single_sample)
 
-
+# 预测
 def predicts(classifier, samples):
     return classifier.classify_many(samples)
+
+
+def test_process(tests: list):
+    flag = []
+    words = []
+    for i in tests:
+        flag.append(i[1])
+        words.append(i[0])
+    return flag, words
 
 
 def ana(corpus_path: str, features_num: int, classifier):
@@ -33,7 +43,7 @@ def ana(corpus_path: str, features_num: int, classifier):
     nesi = int(len(negfeaatures) * 0.9)
     test = posfeatures[:posi] + negfeaatures[:nesi]
     train = posfeatures[posi + 1:] + negfeaatures[nesi + 1:]
-    flags, test_words = pos_neg_seperate.test_process(test)
+    flags, test_words = test_process(test)
     filter = training(train, classifier)
     preds = predicts(filter, test_words)
     n = 0
