@@ -7,3 +7,5 @@ gensim实现LDA主题模型-------实战案例（分析希拉里邮件的主题�
 https://blog.csdn.net/shawroad88/article/details/90115390
 python读写json文件:
 https://www.cnblogs.com/bigberg/p/6430095.html
+sklearn+nltk ——情感分析（积极、消极）
+https://www.cnblogs.com/DHuifang004/p/11406211.html

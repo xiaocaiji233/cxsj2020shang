@@ -3,6 +3,8 @@ import json_read
 
 # def str2features(text:str):
 
+def get_feature(path:str,num):
+    return generate_dictionary.get_features(path, num)
 
 def build_feature(path: str, num: int):
     feature = generate_dictionary.get_features(path, num)

@@ -13,15 +13,12 @@ def seperate(path: str):
     return {'positive': pos, 'negative': neg}
 
 
-def test_process(path: str):
-    import jieba_devide
-    orin = open(path, encoding="UTF-8").read()
+def test_process(tests: list):
     flag = []
     words = []
-    rows = jieba_devide.doc2row(orin)
-    for i in rows:
-        flag.append(i[0])
-        words.append(jieba_devide.ch_jieba(i[2:]))
+    for i in tests:
+        flag.append(i[1])
+        words.append(i[0])
     return flag, words
 
 
